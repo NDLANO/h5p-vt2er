@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="h5p-vt2er.css">
+  <script src="h5p-vt2er.js" defer></script>
+  <title>H5P "Virtual Tour to Escape Room" converter</title>
+</head>
+
+<body class=".h5p-vt2er">
+  <h1>H5P "Virtual Tour to Escape Room" converter</h1>
+
+  <p>
+    <a href="https://ndla.no" target="_blank">NDLA</a> has created the content type Escape Room. It is based on <a
+      href="https://h5p.org/virtual-tour-360" target="_blank">
+      H5P Group's Virtual Tour 360</a> content type, but with additional features. This tool allows you to convert
+    Virtual Tour 360 contents to Escape Room content.
+  </p>
+  <p>
+    You can upload a Virtual Tour 360 content and will be offered to download the converted content.
+  </p>
+  <p>
+    <em>Please note that you will need to have installed the Escape Room content type on your H5P platform before, or
+      someone with administrative rights to your platform will need to upload the resulting file in order to install
+      missing libraries.</em>
+  </p>
+
+  <form action="#" id="uploadForm" enctype="multipart/form-data">
+    <div class="file-input-wrapper">
+      <input class="file-input" name="file-input" id="file-input" type="file">
+      <label for="file-input" class="file-input-button" tabindex="0">
+        Select an H5P Virtual Tour 360 file...
+      </label>
+    </div>
+    <p class="file-input-name"></p>
+  </form>
+
+  <div class="spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <p class="result"></p>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<ruleset name="Just files to include">
+    <rule ref="PSR12" />
+
+    <file>./upload.php</file>
+    <file>./functions.php</file>
+    <file>./h5p-vt2er/app/utils/</file>
+    <file>./h5p-vt2er/app/autoloader.php</file>
+    <file>./h5p-vt2er/app/H5PFileHandler.php</file>
+    <file>./h5p-vt2er/app/H5PVT2ER.php</file>
+</ruleset>
