@@ -84,7 +84,17 @@
     window.URL.revokeObjectURL(link.href);
   };
 
-  const setResult = (message, isError) => {
+  /**
+   * Done handler.
+   *
+   * @param {string} message Message to display.
+   * @param {boolean} [isError] If true, message is an error.
+   */
+  const done = (message, isError = false) => {
+    fileInputButton.removeAttribute("disabled");
+
+    spinner.classList.add("display-none");
+
     result.innerText = message;
     result.classList.toggle('error', isError);
     result.classList.toggle('display-none', !message);
@@ -108,34 +118,21 @@
         body: formData,
       });
 
-      fileInputButton.removeAttribute("disabled");
-      spinner.classList.add("display-none");
-
       if (response.ok) {
         const disposition = response.headers.get("Content-Disposition");
         const filename = getDownloadFilename(disposition);
 
-        result.innerText = "File converted successfully!";
-        result.classList.remove("error");
-        result.classList.remove("display-none");
-
         const blob = await response.blob();
         offerFileForDownload(blob, filename);
+
+        done("File converted successfully!");
       }
       else {
-        result.innerText = await response.text();
-        result.classList.add("error");
-        result.classList.remove("display-none");
+        done(await response.text(), true);
       }
     }
     catch (error) {
-      fileInputButton.removeAttribute("disabled");
-
-      spinner.classList.add("display-none");
-
-      result.innerText = error.message;
-      result.classList.add("error");
-      result.classList.remove("display-none");
+      done(error,message, true);
     }
   };
 
