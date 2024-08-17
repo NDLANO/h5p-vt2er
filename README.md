@@ -7,7 +7,12 @@ Tool that allows to migrate Virtual Tour contents to Escape Room contents.
 ## Setup
 ### Installation
 - Download the contents of this archive.
-- Copy the files to your server or a subdirectory of your server.
+- Copy the files to your server or a subdirectory of your server, but you can leave out:
+  - LICENSE
+  - README.md
+  - .git (if you cloned the repository)
+  - .gitginore
+  - .phpcs.xml
 - Ensure that the files can be accessed by your server. Usually the respective owner of all the files and its
   directories should be `daemon` or `www-data`. In particular, the server will be able to write to the `uploads`
   folder for temporarily storing the files that need to be processed.
