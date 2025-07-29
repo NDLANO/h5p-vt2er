@@ -268,6 +268,8 @@ class H5PVT2ER
     {
         $contentJson = $h5pFileHandler->getH5PContentParams();
 
+        $contentJson["threeImage"]["wasConvertedFromVirtualTour"] = true;
+
         for ($i = 0; $i < count($contentJson["threeImage"]["scenes"] ?? []); $i++) {
             $contentJson["threeImage"]["scenes"][$i]["enableZoom"] = false;
 
