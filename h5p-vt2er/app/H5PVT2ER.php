@@ -250,7 +250,7 @@ class H5PVT2ER
             ["machineName" => "H5P.MultiChoice", "majorVersion" => 1, "minorVersion" => 16],
             ["machineName" => "H5P.Blanks", "majorVersion" => 1, "minorVersion" => 14],
             ["machineName" => "H5P.Crossword", "majorVersion" => 0, "minorVersion" => 5],
-            ["machineName" => "H5P.EscapeRoom", "majorVersion" => 0, "minorVersion" => 5]
+            ["machineName" => "H5P.EscapeRoom", "majorVersion" => 0, "minorVersion" => 7]
         ];
 
         return $h5pJson;

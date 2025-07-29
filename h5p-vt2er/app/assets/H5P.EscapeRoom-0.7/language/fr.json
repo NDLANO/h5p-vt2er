@@ -1,0 +1,488 @@
+{
+  "semantics": [
+    {
+      "label": "Éditeur de salle d'évasion",
+      "fields": [
+        {
+          "label": "Was converted from Virtual Tour"
+        },
+        {
+          "label": "Scènes",
+          "entity": "Scène",
+          "field": {
+            "fields": [
+              {
+                "label": "Type de scène",
+                "options": [
+                  {
+                    "label": "Image à 360°"
+                  },
+                  {
+                    "label": "Image panoramique"
+                  },
+                  {
+                    "label": "Image statique"
+                  }
+                ]
+              },
+              {
+                "label": "Afficher un bouton \"Retour\"",
+                "description": "Affichez un bouton pour revenir à la scène précédente"
+              },
+              {
+                "label": "Activer \"Zoom\"",
+                "description": "Activer le zoom avant et arrière avec les boutons de zoom, la molette de souris, les gestes tactiles et les raccourcis clavier."
+              },
+              {
+                "label": "SceneId"
+              },
+              {
+                "label": "Titre de la scène",
+                "description": "Utilisé pour identifier la scène"
+              },
+              {
+                "label": "Image de fond de la scène"
+              },
+              {
+                "label": "Description de la scène",
+                "description": "Un texte pour décrire la scène à l'utilisateur final"
+              },
+              {
+                "label": "Description de la scène (pour les lecteurs d’écran)",
+                "description": "Un texte pour décrire la scène à l'utilisateur final. Il ne sera pas visible mais lu par les lecteurs d’écran, donc le formatage sera ignoré."
+              },
+              {
+                "label": "Afficher \"Description de la scène\" au début",
+                "description": "Afficher la description de la scène lorsque celle-ci démarre pour la première fois"
+              },
+              {
+                "label": "Position initiale de la caméra",
+                "description": "Position de la caméra (tangage et lacet)"
+              },
+              {
+                "label": "Interactions",
+                "field": {
+                  "fields": [
+                    {
+                      "label": "Étiquette",
+                      "description": "Si laissé vide, aucune étiquette ne sera affichée et nous essaierons d'utiliser le champ de titre pour les lecteurs d'écran"
+                    },
+                    {
+                      "label": "Paramètres de l'étiquette",
+                      "fields": [
+                        {
+                          "label": "Position de l'étiquette",
+                          "description": "Choisissez où l'étiquette doit apparaître",
+                          "options": [
+                            {
+                              "label": "Utiliser le paramètre comportemental"
+                            },
+                            {
+                              "label": "Alignée à droite"
+                            },
+                            {
+                              "label": "Alignée à gauche"
+                            },
+                            {
+                              "label": "Alignée en haut"
+                            },
+                            {
+                              "label": "Alignée en bas"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Affichage des étiquettes",
+                          "description": "Si non cochée, les étiquettes seront affichées uniquement lorsque vous passez la souris dessus",
+                          "options": [
+                            {
+                              "label": "Utiliser le paramètre comportemental"
+                            },
+                            {
+                              "label": "Afficher"
+                            },
+                            {
+                              "label": "Masquer"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Paramètres de mot de passe",
+                      "fields": [
+                        {
+                          "label": "Code pour l'interaction",
+                          "description": "Si non vide, l'utilisateur doit saisir le code pour ouvrir ce contenu. Séparez plusieurs codes corrects avec /."
+                        },
+                        {
+                          "label": "Un indice pour le code d'interaction",
+                          "description": "Un indice optionnel pour le code, peut être laissé vide si on le souhaite"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Afficher comme zone active",
+                      "description": "Permet d'ajouter des zones d'interaction personnalisées à l'image d'arrière-plan."
+                    },
+                    {
+                      "label": "Paramètres des zones actives",
+                      "fields": [
+                        {
+                          "label": "Afficher la zone active lorsque la souris passe dessus",
+                          "description": "Permet de rendre visible la zone sensible lorsque la souris passe dessus."
+                        },
+                        {
+                          "label": "Rendre la zone active accessible avec la touche Tab",
+                          "description": "Permet de rendre la zone active accessible avec la touche Tab. Nécessaire pour rendre le contenu accessible !"
+                        },
+                        {
+                          "default": "256,128",
+                          "label": "Valeurs pour stocker la hauteur et la largeur de la zone sensible"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Afficher comme contenu ouvert dans la scène",
+                      "description": "Permet d'afficher le contenu dans une boîte de dialogue ouverte directement dans la scène."
+                    },
+                    {},
+                    {
+                      "label": "Position de l'interaction"
+                    },
+                    {
+                      "label": "Style du bouton",
+                      "description": "Décidez de l'aspect de l'icône.",
+                      "options": [
+                        {
+                          "label": "Icône de texte"
+                        },
+                        {
+                          "label": "Icône d'information"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Style du bouton",
+                "description": "Décidez à quoi devraient ressembler les boutons pointant vers cette scène. Pour les scènes statiques qui ne conduisent pas à de nouvelles scènes, nous vous recommandons le bouton \"Plus d'informations \".",
+                "options": [
+                  {
+                    "label": "Nouvelle scène (flèche)"
+                  },
+                  {
+                    "label": "Plus d'informations (plus)"
+                  }
+                ]
+              },
+              {
+                "label": "Type d'audio",
+                "description": "Décidez du type audio que cette scène utilisera, soit utiliser une piste audio ou choisir une liste de lecture audio existante.",
+                "options": [
+                  {
+                    "label": "Piste audio"
+                  },
+                  {
+                    "label": "Liste de lecture"
+                  }
+                ]
+              },
+              {
+                "label": "Piste audio",
+                "description": "Ajoutez une piste audio spécifique à cette scène."
+              },
+              {
+                "label": "Liste de lecture",
+                "description": "Ici vous pouvez choisir une liste de lecture existante comme audio."
+              },
+              {
+                "label": "Redémarrer l'audio lorsque la scène est rouverte"
+              }
+            ]
+          }
+        },
+        {},
+        {
+          "label": "Listes de lecture"
+        },
+        {
+          "label": "Listes de lecture",
+          "field": {
+            "fields": [
+              {
+                "label": "Titre de la liste de lecture",
+                "description": "Utilisé pour identifier la liste de lecture"
+              },
+              {
+                "label": "Pistes audio",
+                "description": "Ajoutez des pistes audio à la liste de lecture."
+              },
+              {}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Listes de lecture",
+      "description": "Ces options vous permettront d'ajouter des listes de lecture pour les scènes.",
+      "fields": [
+        {
+          "label": "Listes de lectures ajoutées",
+          "description": "Créez des listes de lectures disponibles par défaut pour toutes les scènes."
+        }
+      ]
+    },
+    {
+      "label": "Paramètres comportementaux",
+      "description": "Ces options vous permettront de contrôler comment le monde doit se comporter.",
+      "fields": [
+        {
+          "label": "Type d'audio",
+          "description": "Décidez du type audio que cette scène utilisera, soit utiliser une piste audio ou choisir une liste de lecture audio existante.",
+          "options": [
+            {
+              "label": "Piste audio globale"
+            },
+            {
+              "label": "Liste de lecture"
+            }
+          ]
+        },
+        {
+          "label": "Piste audio globale",
+          "description": "Ajoutez une piste audio qui est disponible pour toutes les scènes par défaut."
+        },
+        {
+          "label": "Liste de lecture",
+          "description": "Ici vous pouvez choisir une liste de lecture existante comme audio."
+        },
+        {
+          "label": "Afficher le bouton \"Résultats\"",
+          "description": "Bouton d'affichage des résultats des tâches."
+        },
+        {
+          "label": "Afficher le bouton \"Accueil\"",
+          "description": "Bouton permettant d'aller à la scène de départ."
+        },
+        {
+          "label": "Qualité de rendu de la scène",
+          "description": "Choisissez la résolution pour le rendu d'une scène. Ceci affecte directement le niveau de qualité de la scène. Essayez d'augmenter la qualité si une scène a l'air figée ou si des \"vagues\" sont visibles dans les scènes. Notez qu'un rendu de meilleure qualité prend plus de temps à charger.",
+          "options": [
+            {
+              "label": "Haute qualité (128x128)"
+            },
+            {
+              "label": "Qualité moyenne (64x64)"
+            },
+            {
+              "label": "Basse qualité (16x16)"
+            }
+          ]
+        },
+        {
+          "label": "Paramètres de l'étiquette",
+          "fields": [
+            {
+              "label": "Position de l'étiquette",
+              "description": "La position par défaut de l'étiquette. La position peut être forcée pour chaque interaction",
+              "options": [
+                {
+                  "label": "Alignée à droite"
+                },
+                {
+                  "label": "Alignée à gauche"
+                },
+                {
+                  "label": "Alignée en haut"
+                },
+                {
+                  "label": "Alignée en bas"
+                }
+              ]
+            },
+            {
+              "label": "Affichage des étiquettes",
+              "description": "Si non cochée, les étiquettes seront affichées uniquement lorsque vous passez la souris dessus"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Localiser",
+      "fields": [
+        {
+          "label": "Étiquette Aria pour le type de contenu",
+          "default": "Salle d'évasion"
+        },
+        {
+          "label": "Étiquette pour lire l'audio",
+          "default": "Lire la piste audio"
+        },
+        {
+          "label": "Étiquette pour mettre en pause l'audio",
+          "default": "Mettre en pause la piste audio"
+        },
+        {
+          "label": "Titre de la boîte de dialogue de la scène",
+          "default": "Description de scène"
+        },
+        {
+          "label": "Étiquette pour le bouton de réinitialisation de la caméra",
+          "default": "Réinitialiser la caméra"
+        },
+        {
+          "label": "Étiquette pour le bouton d'envoi de la boîte de dialogue",
+          "default": "Envoyer"
+        },
+        {
+          "label": "Étiquette pour le bouton de fermeture de la boîte de dialogue",
+          "default": "Fermer"
+        },
+        {
+          "label": "Étiquette Aria pour le bouton d'extension de l'étiquette",
+          "default": "Agrandir l'étiquette"
+        },
+        {
+          "label": "Étiquette pour le chargement de l'image d'arrière-plan dans la scène à 360°",
+          "default": "Chargement de l'image d'arrière-plan..."
+        },
+        {
+          "label": "Étiquette pour quand il n'y a pas de contenu",
+          "default": "Aucun contenu"
+        },
+        {
+          "label": "Étiquette pour le bouton du menu contextuel permettant d'aller à la scène",
+          "default": "Aller à la scène"
+        },
+        {
+          "label": "Étiquette pour le bouton de menu contextuel permettant de modifier",
+          "default": "Modifier"
+        },
+        {
+          "label": "Étiquette pour le bouton du menu contextuel permettant de supprimer",
+          "default": "Supprimer"
+        },
+        {
+          "label": "Traduction de \"Score\"",
+          "default": "Résultat"
+        },
+        {
+          "label": "Traduction de \"Assignment\"",
+          "default": "Mission"
+        },
+        {
+          "label": "Traduction de \"Total\"",
+          "default": "Total"
+        },
+        {
+          "label": "Étiquette pour le bouton permettant d'afficher le résumé des résultats",
+          "default": "Afficher le résumé des résultats"
+        },
+        {
+          "label": "Traduction de \"Scene\"",
+          "default": "Scène"
+        },
+        {
+          "label": "Traduction de \"Untitled",
+          "default": "Sans titre"
+        },
+        {
+          "label": "Traduction de \"Go to start scene\"",
+          "default": "Aller à la scène de départ"
+        },
+        {
+          "label": "Traduction de \"You are at the start scene\"",
+          "default": "Vous êtes à la scène de départ"
+        },
+        {
+          "label": "Traduction de \"Unlocked\"",
+          "default": "Déverrouillé"
+        },
+        {
+          "label": "Traduction de \"Locked\"",
+          "default": "Verrouillé"
+        },
+        {
+          "label": "Traduction de \"Search the room until you find the code\"",
+          "default": "Fouillez la pièce jusqu'à ce que vous trouviez le code"
+        },
+        {
+          "label": "Traduction de \"The code was wrong, try again\"",
+          "default": "Le code était erroné, réessayez."
+        },
+        {
+          "label": "Traduction de \"The content has been unlocked!\"",
+          "default": "Le contenu a été débloqué !"
+        },
+        {
+          "label": "Traduction de \"Code\"",
+          "default": "Code"
+        },
+        {
+          "label": "Action d'interaction déverrouillée (Continue)",
+          "default": "Continuer"
+        },
+        {
+          "label": "Action d'interaction verrouillée (Unlock)",
+          "default": "Déverrouiller"
+        },
+        {
+          "label": "Drag horizontally to scale (for screen readers)",
+          "default": "Faire glisser horizontalement pour mettre à l'échelle"
+        },
+        {
+          "label": "Drag vertically to scale (for screen readers)",
+          "default": "Faites glisser verticalement pour mettre à l'échelle"
+        },
+        {
+          "label": "Hint",
+          "default": "Indice"
+        },
+        {
+          "label": "Locked content",
+          "default": "Contenu verrouillé"
+        },
+        {
+          "label": "Back",
+          "default": "Retour"
+        },
+        {
+          "label": "Texte pour les lecteurs d'écran. Titre pour le bouton plein écran (entrer)",
+          "default": "Entrer en mode plein écran"
+        },
+        {
+          "label": "Texte pour les lecteurs d’écran. Titre pour le bouton plein écran (sortir)",
+          "default": "Quitter le mode plein écran"
+        },
+        {
+          "label": "Main toolbar",
+          "default": "Barre d'outils principale"
+        },
+        {
+          "label": "No valid scenes set",
+          "default": "Aucune scène valide n’a été définie."
+        },
+        {
+          "label": "Texte pour les lecteurs d'écran. Titre pour le bouton de zoom avant",
+          "default": "Zoom avant"
+        },
+        {
+          "label": "Texte pour les lecteurs d'écran. Titre pour le bouton de zoom arrière",
+          "default": "Zoom arrière"
+        },
+        {
+          "label": "Zoom toolbar",
+          "default": "Barre d'outils Zoom"
+        },
+        {
+          "label": "Texte Aria du zoom pour les lecteurs d'écran",
+          "default": "Zoomé à :num%"
+        }
+      ]
+    }
+  ]
+}

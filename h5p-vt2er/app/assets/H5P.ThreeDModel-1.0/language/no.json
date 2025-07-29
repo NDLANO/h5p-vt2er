@@ -1,0 +1,176 @@
+{
+    "semantics": [
+      {
+        "label": "Modell",
+        "fields": [
+          {
+            "label": "Fil for 3D-modell",
+            "description": "Last opp en glTF-fil (.glb / .gltf) her. The foretrukne formatet er \"glTF 2.0 binary\" i én fil."
+          },
+          {
+            "label": "Alternativ tekst",
+            "description": "Alternativ tekst for skjermlesere."
+          }
+        ]
+      },
+      {
+        "label": "Merkelapper",
+        "fields": [
+          {
+            "label": "Merkelapper",
+            "description": "Legg til merkelapper på 3D-modellen ved å skrive inn tekst og trykke på knappen etter tekstfeltet.",
+            "field": {
+              "label": "Merkelapp",
+              "fields": [
+                {
+                  "label": "Id"
+                },
+                {
+                  "label": "Tekst"
+                },
+                {
+                  "label": "Overflate"
+                }
+              ]
+            }
+          },
+          {
+            "label": "dummy"
+          }
+        ]
+      },
+      {
+        "label": "Visuelle egenskaper",
+        "fields": [
+          {
+            "label": "Bakgrunnsbilde",
+            "description": "Bilde som vil bli brukt som bakgrunn (valgfri)."
+          },
+          {
+            "label": "Bakgrunnsfarge"
+          },
+          {
+            "label": "Plakat",
+            "description": "Bilde som vil vises før 3D-modellen er lastet (valgfri). Denne innstillingen kan brukes for å forhåndsvise en 3D-modell som er stor og vil ta tid å laste. Denne innstillingen vil kun gi mening dersom bildefilen ikke er tilsvarende stor."
+          }
+        ]
+      },
+      {
+        "label": "Størrelse",
+        "fields": [
+          {
+            "label": "Maks bredde",
+            "description": "H5P vil vannligvis skalere innholdet til å ta hele bredden. Sett maks bredde her i CSS-enheter (px, rem, osv.). Denne innstillingen vil ikke påvirke maks bredde for hele H5P-innholdet."
+          },
+          {
+            "label": "Minimum høyde",
+            "description": "H5P vil vanligvis beregne høyden basert på bredden. Sett minimum høyde her i CSS-enheter (px, rem, osv.) dersom modellen vises mindre enn du ønsker."
+          },
+          {
+            "label": "Maks høyde",
+            "description": "H5P vil vanligvis beregne høyden basert på bredden. Sett maks høyde her i CSS-enheter (px, rem, osv.). Denne innstillingen vil ikke påvirke maks høyde for hele H5P-innholdet."
+          }
+        ]
+      },
+      {
+        "label": "Brukergrensesnitt",
+        "fields": [
+          {
+            "label": "Fant ingen 3D-modell",
+            "default": "3D-modell ble ikke lastet inn. Har du glemt å laste den opp?"
+          },
+          {
+            "label": "dummy",
+            "default": "dummy"
+          }
+        ]
+      },
+      {
+        "label": "Tilgjengelighet",
+        "fields": [
+          {
+            "label": "3D-modellens forside",
+            "description": "Alternativ tekst for 3D-modellens forside.",
+            "default": "3D-modellens forside"
+          },
+          {
+            "label": "3D-modellens bakside",
+            "description": "Alternativ tekst for 3D-modellens bakside.",
+            "default": "3D-modellens bakside"
+          },
+          {
+            "label": "3D-modellens venstre side",
+            "description": "Alternativ tekst for 3D-modellens venstre side.",
+            "default": "3D-modellens venstre side"
+          },
+          {
+            "label": "3D-modellens høyre side",
+            "description": "Alternativ tekst for 3D-modellens høyre side.",
+            "default": "3D-modellens høyre side"
+          },
+          {
+            "label": "3D-modellens øvre forside",
+            "description": "Alternativ tekst for 3D-modellens øvre forside.",
+            "default": "3D-modellens øvre forside"
+          },
+          {
+            "label": "3D-modellens øvre bakside",
+            "description": "Alternativ tekst for 3D-modellens øvre bakside.",
+            "default": "3D-modellens øvre bakside"
+          },
+          {
+            "label": "3D-modellens øvre venstre side",
+            "description": "Alternativ tekst for 3D-modellens øvre venstre side.",
+            "default": "3D-modellens øvre venstre side"
+          },
+          {
+            "label": "3D-modellens øvre høyre side",
+            "description": "Alternativ tekst for 3D-modellens øvre høyre side",
+            "default": "3D-modellens øvre høyre side"
+          },
+          {
+            "label": "3D-modellens nedre forside",
+            "description": "Alternativ tekst for 3D-modellens nedre forside.",
+            "default": "3D-modellens nedre forside"
+          },
+          {
+            "label": "3D-modellens nedre bakside",
+            "description": "Alternativ tekst for 3D-modellens nedre bakside.",
+            "default": "3D-modellens nedre bakside"
+          },
+          {
+            "label": "3D-modellens nedre venstre side",
+            "description": "Alternativ tekst for 3D-modellens nedre venstre side.",
+            "default": "3D-modellens nedre venstre side"
+          },
+          {
+            "label": "3D-modellens nedre høyre side",
+            "description": "Alternativ tekst for 3D-modellens nedre høyre side.",
+            "default": "3D-modellens nedre høyre side"
+          },
+          {
+            "label": "Interaksjonsvarsel (skjermleser)",
+            "description": "Teksten som leses opp når 3D-modellen er i fokus, og brukeren kan interagere med den.",
+            "default": "Bruk mus, trykkfølsom skjerm, eller piltaster for å interagere med 3D-modellen."
+          },
+          {
+            "label": "Navn på knapp for åpne fullskjerm (skjermleser).",
+            "default": "Åpne fullskjerm"
+          },
+          {
+            "label": "Navn på knapp for gå ut av fullskjerm (skjermleser).",
+            "default": "Gå ut av fullskjerm"
+          },
+          {
+            "label": "Navn på knapp for å spille av animasjon.",
+            "default": "Spill animasjon"
+          },
+          {
+            "label": "Navn på pause-knapp.",
+            "default": "Sett på pause"
+          }
+        ]
+      }
+    ]
+  }
+  

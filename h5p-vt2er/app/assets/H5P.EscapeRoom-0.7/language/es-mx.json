@@ -1,0 +1,488 @@
+{
+  "semantics": [
+    {
+      "label": "Editor de Imágenes del Cuarto de Escape",
+      "fields": [
+        {
+          "label": "Was converted from Virtual Tour"
+        },
+        {
+          "label": "Escenas",
+          "entity": "Escena",
+          "field": {
+            "fields": [
+              {
+                "label": "Tpo de escena",
+                "options": [
+                  {
+                    "label": "Imagen 360"
+                  },
+                  {
+                    "label": "Imagen panorámica"
+                  },
+                  {
+                    "label": "Imagen estática"
+                  }
+                ]
+              },
+              {
+                "label": "Mostrar botón \"Retroceder\"",
+                "description": "Mostrar botón para navegar de regreso a su escena anterior"
+              },
+              {
+                "label": "Habilitar \"Zoom\"",
+                "description": "Habilitar Acercar y Alejar con botones de Zoo,, rueda del ratón, gestos al tocar y atajos de teclado."
+              },
+              {
+                "label": "IDescena"
+              },
+              {
+                "label": "Título de Escena",
+                "description": "Usado para identificar la escena"
+              },
+              {
+                "label": "Fondo de la Escena"
+              },
+              {
+                "label": "Descripción de la Escena",
+                "description": "Un texto que puede describir la escena para el usuario final"
+              },
+              {
+                "label": "Descripción de la escena (para lectores de pantalla)",
+                "description": "Un texto que puede describir la escena para el usuario final. No será visible, pero será leído por lectores de pantalla, por lo que el formato será ignorado."
+              },
+              {
+                "label": "Mostrar \"Descripción de Escena\" inicialmente",
+                "description": "Muestra la descripción de la escena cuando la escena inicia por primera vez"
+              },
+              {
+                "label": "Posición inicial de la cámara",
+                "description": "Posición de la cámara en pitch y yaw"
+              },
+              {
+                "label": "Interacciones",
+                "field": {
+                  "fields": [
+                    {
+                      "label": "Etiqueta",
+                      "description": "Si se deja vacío no se mostrará ninguna etiqueta y trataremos de usar el campo del título para Lectores de texto en voz alta"
+                    },
+                    {
+                      "label": "Configuraciones de Etiqueta",
+                      "fields": [
+                        {
+                          "label": "Posición de etiqueta",
+                          "description": "Elegir donde debería aparecer la etiqueta",
+                          "options": [
+                            {
+                              "label": "Usar configuraciones del comportamiento"
+                            },
+                            {
+                              "label": "Alineada por la derecha"
+                            },
+                            {
+                              "label": "Alineada por la izquierda"
+                            },
+                            {
+                              "label": "Alineada en superior"
+                            },
+                            {
+                              "label": "Alineada en inferior"
+                            }
+                          ]
+                        },
+                        {
+                          "label": "Mostrar Etiqueta",
+                          "description": "Si se oculta - las etiquetas se mostrarán solamente al pasar el ratón encima",
+                          "options": [
+                            {
+                              "label": "Usar configuraciones del comportamiento"
+                            },
+                            {
+                              "label": "Mostrar"
+                            },
+                            {
+                              "label": "Ocultar"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Configuraciones del código",
+                      "fields": [
+                        {
+                          "label": "Código para la interacción",
+                          "description": "Si no está vacío, el usuario tiene que escribir el código para abrir este contenido. Separar varios códigos correctos con /."
+                        },
+                        {
+                          "label": "Una pista para el código de la interacción",
+                          "description": "Una pista opcional para el código, puede dejarse vacía si lo desea"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Mostrar como punto caliente (hotspot)",
+                      "description": "Permite añadir áreas de interacciones a la imagen del fondo, las que pueden ser de tamaño personalizado."
+                    },
+                    {
+                      "label": "Configuraciones de PuntoCaliente",
+                      "fields": [
+                        {
+                          "label": "Mostrar puntocaliente cuando el ratón le pasa encima",
+                          "description": "Permitirá que el puntocaliente sea visible cuando el ratón está pasando por encima del área."
+                        },
+                        {
+                          "label": "Configurar que el puntocaliente sea reactivo al tabulador",
+                          "description": "Configurar que el puntocaliente sea reactivo al tabulador. ¡Es necesario que esté activado para hacer accesible el contenido!"
+                        },
+                        {
+                          "default": "256,128",
+                          "label": "Valores para almacenar la altura y ancho del puntocaliente"
+                        }
+                      ]
+                    },
+                    {
+                      "label": "Mostrar como contenido abierto en la escena",
+                      "description": "Permite que el contenido sea mostrado en la caja de diálogo abierta directamente en la escena."
+                    },
+                    {},
+                    {
+                      "label": "Posición de la interacción"
+                    },
+                    {
+                      "label": "Estilo del botón",
+                      "description": "Decidir cómo debería verse el ícono.",
+                      "options": [
+                        {
+                          "label": "Ícono de texto"
+                        },
+                        {
+                          "label": "Ícono de información"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Estilo del botón",
+                "description": "Decidir como deberían de verse los botones que apuntan a esta escena. Para escenas que sean estáticas y no conduzcan hacia nuevas escenas, recomendamos el botón de \"Más información\" .",
+                "options": [
+                  {
+                    "label": "Nueva escena (flecha)"
+                  },
+                  {
+                    "label": "Más información (más)"
+                  }
+                ]
+              },
+              {
+                "label": "Tipo de audio",
+                "description": "Decidir el tipo de audio que usará esta escena, ya sea una pista de audio o elegir una lista de reproducción de audio existente.",
+                "options": [
+                  {
+                    "label": "Pista de Audio"
+                  },
+                  {
+                    "label": "Lista de reproducción"
+                  }
+                ]
+              },
+              {
+                "label": "Pista de Audio",
+                "description": "Añadir una pista de audio que es específica para esta escena."
+              },
+              {
+                "label": "Lista de reproducción",
+                "description": "Aquí puede usted elegir como audio una lista de reproducción existente."
+              },
+              {
+                "label": "Reiniciar audio cuando la escena se vuelve a abrir"
+              }
+            ]
+          }
+        },
+        {},
+        {
+          "label": "Listas de reproducción"
+        },
+        {
+          "label": "Listas de reproducción",
+          "field": {
+            "fields": [
+              {
+                "label": "Título de Lista de reproducción",
+                "description": "Usado para identificar la lista de reproducción"
+              },
+              {
+                "label": "Pistas de Audio",
+                "description": "Añadir pistas de audio a la lista de reproducción."
+              },
+              {}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Listas de reproducción",
+      "description": "Estas opciones le permitirán añadir pistas de reproducción para las escenas.",
+      "fields": [
+        {
+          "label": "Listas de reproducción añadidas",
+          "description": "Hacer listas de reproducción que estén disponibles para todas las escenas de forma predeterminada."
+        }
+      ]
+    },
+    {
+      "label": "Configuraciones del Comportamiento",
+      "description": "Estas opciones le permitirán controlar como se comporta el mundo.",
+      "fields": [
+        {
+          "label": "Tipo de audio",
+          "description": "Decidir qué tipo de audio usará esta escena, ya sea una pista de audio o elegir una lista de reproducción de audio existente.",
+          "options": [
+            {
+              "label": "Audio Global"
+            },
+            {
+              "label": "Lista de reproducción"
+            }
+          ]
+        },
+        {
+          "label": "Audio Global",
+          "description": "Añadir una pista de audio que está disponible para todas las escenas de forma predeterminada."
+        },
+        {
+          "label": "Lista de reproducción",
+          "description": "Aquí puede usted elegir una lista de reproducción existente como audio."
+        },
+        {
+          "label": "Mostrar botón de \"Puntajes\"",
+          "description": "Ver botón para mostrar los puntajes de tareas."
+        },
+        {
+          "label": "Mostrar botón \"Inicio\"",
+          "description": "Mostrar botón para ir a la escena inicial."
+        },
+        {
+          "label": "Calidad del renderizado de escena",
+          "description": "Elija la cantidad de segmentos de ancho y altura usados para renderizar una escena. Esto afecta directamente el nivel de calidad de la escena, intente aumentar la calidad si la escena se viera \"pixeleada\" o si \"ondulaciones\" fueran visibles dentro de las escenas. Tenga en cuenta que al renderizar a mayor calidad tomará más tiempo para cargar.",
+          "options": [
+            {
+              "label": "Alta Calidad (128x128)"
+            },
+            {
+              "label": "Media Calidad (64x64)"
+            },
+            {
+              "label": "Baja Calidad (16x16)"
+            }
+          ]
+        },
+        {
+          "label": "Configuraciones de etiqueta",
+          "fields": [
+            {
+              "label": "Posición de etiqueta",
+              "description": "La posición predeterminada de etiqueta. La posición puede ser anulada por interacción",
+              "options": [
+                {
+                  "label": "Alineada por la derecha"
+                },
+                {
+                  "label": "Alineada por la izquierda"
+                },
+                {
+                  "label": "Alineada en superior"
+                },
+                {
+                  "label": "Alineado en inferior"
+                }
+              ]
+            },
+            {
+              "label": "Mostrar Etiquetas",
+              "description": "Si no se activara - etiquetas serán mostradas solamente al pasar el ratón encima"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Adaptación local",
+      "fields": [
+        {
+          "label": "Etiqueta Aria para tipo de contenido",
+          "default": "Cuarto de Escape"
+        },
+        {
+          "label": "Etiqueta para reproducir audio",
+          "default": "Reproducir Pista de Audio"
+        },
+        {
+          "label": "Etiqueta para pausar audio",
+          "default": "Pausar Pista de Audio"
+        },
+        {
+          "label": "Título para diálogo de escena",
+          "default": "Descripción de Escena"
+        },
+        {
+          "label": "Etiqueta para botón para reiniciar cámara",
+          "default": "Reiniciar Cámara"
+        },
+        {
+          "label": "Etiqueta para el botón de diálogo para enviar",
+          "default": "Diálogo para Enviar"
+        },
+        {
+          "label": "Etiqueta para el botón de diálogo cerrar",
+          "default": "Diálogo Cerrar"
+        },
+        {
+          "label": "Etiqueta Aria para botón expandir etiqueta",
+          "default": "Expandir la etiqueta visual"
+        },
+        {
+          "label": "Etiqueta para cuando la imagen del fondo está cargando en escena 360",
+          "default": "Cargando imagen del fondo..."
+        },
+        {
+          "label": "Etiqueta para cuando no hay contenido",
+          "default": "Sin contenido"
+        },
+        {
+          "label": "Etiqueta para botón de menú contextual para ir a escena",
+          "default": "Ir a escena"
+        },
+        {
+          "label": "Etiqueta para botón de menú contextual para editar",
+          "default": "Editar"
+        },
+        {
+          "label": "Etiqueta para botón de menú contextual para eliminar",
+          "default": "Eliminar"
+        },
+        {
+          "label": "Traducción para \"Puntaje\"",
+          "default": "Puntaje"
+        },
+        {
+          "label": "Traducción para \"Tarea\"",
+          "default": "Tarea"
+        },
+        {
+          "label": "Traducción para \"Total\"",
+          "default": "Total"
+        },
+        {
+          "label": "Etiqueta para botón para mostrar resumen de puntaje",
+          "default": "Mostrar Resumen de Puntaje"
+        },
+        {
+          "label": "Traducción para 'Escena'",
+          "default": "Escena"
+        },
+        {
+          "label": "Sin título",
+          "default": "Sin título"
+        },
+        {
+          "label": "Ir a escena inicial",
+          "default": "Ir a escena inicial"
+        },
+        {
+          "label": "Usted está en la escena inicial",
+          "default": "Usted está en la escena inicial"
+        },
+        {
+          "label": "Desbloqueado",
+          "default": "Desbloqueado"
+        },
+        {
+          "label": "Bloqueado",
+          "default": "Bloqueado"
+        },
+        {
+          "label": "Buscar en la habitación hasta que encuentre el código",
+          "default": "Buscar en la habitación hasta que usted encuentre el código"
+        },
+        {
+          "label": "El código era incorrecto; inténtelo de nuevo.",
+          "default": "El código era incorrecto; inténtelo de nuevo."
+        },
+        {
+          "label": "¡El contenido ha sido desbloqueado!",
+          "default": "¡El contenido ha sido desbloqueado!"
+        },
+        {
+          "label": "Código",
+          "default": "Código"
+        },
+        {
+          "label": "Acción de interacción desbloqueada (Continuar)",
+          "default": "Continuar"
+        },
+        {
+          "label": "Acción de interacción bloqueada (Desbloquear)",
+          "default": "Desbloquear"
+        },
+        {
+          "label": "Arrastrar horizontalmente para cambiar tamaño (para lectores de pantalla)",
+          "default": "Arrastrar horizontalmente para cambiar el tamaño"
+        },
+        {
+          "label": "Arrastrar verticalmente para cambiar el tamaño (para lectores de pantalla)",
+          "default": "Arrastrar verticalmente para cambiar el tamaño"
+        },
+        {
+          "label": "Pista",
+          "default": "Pista"
+        },
+        {
+          "label": "Contenido bloqueado",
+          "default": "Contenido bloqueado"
+        },
+        {
+          "label": "Regresar",
+          "default": "Regresar"
+        },
+        {
+          "label": "Texto para lectores de pantalla. Título para botón Pantalla Completa (Intro)",
+          "default": "Pasar a modo de Pantalla Completa"
+        },
+        {
+          "label": "Texto para lectores de pantalla. Título para botón de Pantalla Completa (salir)",
+          "default": "Salir del modo de Pantalla Completa"
+        },
+        {
+          "label": "Barra principal de herramientas",
+          "default": "Barra principal de herramientas"
+        },
+        {
+          "label": "Sin escenas válidas configuradas",
+          "default": "No se han configurado escenas válidas."
+        },
+        {
+          "label": "Texto para lectores de pantalla. Título para botón Acercar",
+          "default": "Acercar"
+        },
+        {
+          "label": "Texto para lectores de pantalla. Título para botón Alejar",
+          "default": "Alejar"
+        },
+        {
+          "label": "Barra de herramientas de Zoom",
+          "default": "Barra de herramientas de Zoom"
+        },
+        {
+          "label": "Texto aria Zoom para lectores de pantalla",
+          "default": ":num% acercado"
+        }
+      ]
+    }
+  ]
+}
