@@ -35,8 +35,7 @@ $configFile = __DIR__ . DIRECTORY_SEPARATOR . "config.json";
 if (file_exists($configFile)) {
     try {
         $userConfig = json_decode(file_get_contents($configFile), true);
-    }
-    catch (\Exception $error) {
+    } catch (\Exception $error) {
         // Intentionally left blank
     }
 }
