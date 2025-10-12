@@ -248,7 +248,10 @@ class H5PFileHandler
             return false;
         }
 
-        $dirs = ["H5P.ThreeImage-0.5", "H5PEditor.ThreeImage-0.5", "H5P.ThreeSixty-0.3"];
+        $dirs = [
+            "H5P.ThreeImage-0.5", "H5PEditor.ThreeImage-0.5", "H5P.ThreeSixty-0.3",
+            "H5P.NDLAThreeImage-0.5", "H5PEditor.NDLAThreeImage-0.5"
+        ];
         foreach ($dirs as $dir) {
             $dirPath = $extractDir . DIRECTORY_SEPARATOR . $dir;
             if (is_dir($dirPath)) {

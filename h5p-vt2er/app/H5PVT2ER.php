@@ -190,14 +190,15 @@ class H5PVT2ER
     {
         $h5pJson = $h5pFileHandler->getH5PInformation();
 
-        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage") {
-            throw new \Exception(_("The content type is not a Virtual Tour."));
+        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage") {
+            throw new \Exception(_("The content type is not a Virtual Tour.") . " (" . $h5pJson["mainLibrary"] . ")");
         }
 
         if (isset($h5pJson["preloadedDependencies"]) && is_array($h5pJson["preloadedDependencies"])) {
-            $filteredDependencies = array_filter($h5pJson["preloadedDependencies"], function ($dependency) {
-                return $dependency["machineName"] === "H5P.ThreeImage";
-            });
+            $filteredDependencies =
+                array_filter($h5pJson["preloadedDependencies"], function ($dependency) use ($h5pJson) {
+                    return $dependency["machineName"] === $h5pJson["mainLibrary"];
+                });
             $versionInfo = array_shift($filteredDependencies);
         } else {
             $versionInfo = null;
@@ -216,17 +217,26 @@ class H5PVT2ER
             );
         }
 
-        if ($majorVersion === 0 && $minorVersion < 5) {
+        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
             throw new \Exception(
                 _("Please upgrade your Virtual Tour content to version 0.5.")
             );
+        } elseif ($h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
+            throw new \Exception(
+                _("Please upgrade your NDLA Virtual Tour content to version 0.5.")
+            );
         }
 
-        if ($majorVersion !== 0 || $minorVersion > 5) {
+        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
             throw new \Exception(
                 _("The version of the Virtual Tour content is not supported yet.")
             );
+        } elseif ($h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
+            throw new \Exception(
+                _("The version of the Virtual Tour should not exist!")
+            );
         }
+
 
         $h5pJson["mainLibrary"] = "H5P.EscapeRoom";
 
@@ -264,10 +274,26 @@ class H5PVT2ER
      *
      * @return array The migrated H5P content parameters.
      */
-    private function migrateH5PContentParams($h5pFileHandler, $machineName = "H5P.EscapeRoom", $language = "en")
+    private function migrateH5PContentParams($h5pFileHandler, $sourceMachineName, $language = "en")
     {
         $contentJson = $h5pFileHandler->getH5PContentParams();
 
+        if ($sourceMachineName === "H5P.ThreeImage") {
+            $this->migrateH5PContentParamsForThreeImage($contentJson);
+        } elseif ($sourceMachineName === "H5P.NDLAThreeImage") {
+            $this->migrateH5PContentParamsForNDLAThreeImage($contentJson);
+        }
+
+        return $contentJson;
+    }
+
+    /**
+     * Migrate H5P content parameters for ThreeImage.
+     *
+     * @param array &$contentJson The content JSON to modify.
+     */
+    private function migrateH5PContentParamsForThreeImage(&$contentJson)
+    {
         $contentJson["threeImage"]["wasConvertedFromVirtualTour"] = true;
 
         for ($i = 0; $i < count($contentJson["threeImage"]["scenes"] ?? []); $i++) {
@@ -326,7 +352,24 @@ class H5PVT2ER
         foreach ($newKeys as $key => $translation) {
             $contentJson["l10n"][$key] = $contentJson["l10n"][$key] ?? $translation;
         }
+    }
 
-        return $contentJson;
+    /**
+     * Migrate H5P content parameters for NDLAThreeImage.
+     *
+     * @param array &$contentJson The content JSON to modify.
+     */
+    private function migrateH5PContentParamsForNDLAThreeImage(&$contentJson)
+    {
+        $newKeys = [
+            "buttonZoomIn" => _("Zoom in"),
+            "buttonZoomOut" => _("Zoom out"),
+            "zoomToolbar" => _("Zoom toolbar"),
+            "zoomAriaLabel" => _("num% zoomed in"),
+        ];
+
+        foreach ($newKeys as $key => $translation) {
+            $contentJson["l10n"][$key] = $contentJson["l10n"][$key] ?? $translation;
+        }
     }
 }
