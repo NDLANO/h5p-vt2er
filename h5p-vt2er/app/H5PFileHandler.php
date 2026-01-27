@@ -255,7 +255,7 @@ class H5PFileHandler
         foreach ($dirs as $dir) {
             $dirPath = $extractDir . DIRECTORY_SEPARATOR . $dir;
             if (is_dir($dirPath)) {
-                $this->deleteDirectory($dir);
+                $this->deleteDirectory($this->filesDirectory . DIRECTORY_SEPARATOR . $dir);
             }
         }
     }
