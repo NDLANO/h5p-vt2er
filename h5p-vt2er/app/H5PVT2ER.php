@@ -217,21 +217,21 @@ class H5PVT2ER
             );
         }
 
-        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
+        if ($h5pJson["mainLibrary"] === "H5P.ThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
             throw new \Exception(
                 _("Please upgrade your Virtual Tour content to version 0.5.")
             );
-        } elseif ($h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
+        } elseif ($h5pJson["mainLibrary"] === "H5P.NDLAThreeImage" && $majorVersion === 0 && $minorVersion < 5) {
             throw new \Exception(
                 _("Please upgrade your NDLA Virtual Tour content to version 0.5.")
             );
         }
 
-        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
+        if ($h5pJson["mainLibrary"] === "H5P.ThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
             throw new \Exception(
                 _("The version of the Virtual Tour content is not supported yet.")
             );
-        } elseif ($h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
+        } elseif ($h5pJson["mainLibrary"] === "H5P.NDLAThreeImage" && $majorVersion !== 0 || $minorVersion > 5) {
             throw new \Exception(
                 _("The version of the Virtual Tour should not exist!")
             );
