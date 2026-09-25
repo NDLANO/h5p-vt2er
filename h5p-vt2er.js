@@ -132,7 +132,7 @@
       }
     }
     catch (error) {
-      done(error,message, true);
+      done(error.message, true);
     }
   };
 
