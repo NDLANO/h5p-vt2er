@@ -143,6 +143,11 @@ class H5PVT2ER
             );
         }
 
+        $originalMachineName = $this->getOriginalMachineName($h5pFileHandler);
+        if ($originalMachineName !== "H5P.ThreeImage" && $originalMachineName !== "H5P.NDLAThreeImage") {
+            throw new \Exception(_("The content type is not a Virtual Tour.") . " (" . $originalMachineName . ")");
+        }
+
         try {
             $h5pJson = $this->migrateH5PJson($h5pFileHandler);
         } catch (\Exception $error) {
@@ -157,7 +162,7 @@ class H5PVT2ER
         // Writing assets before migrating content parameters to ensure language file is available
         $contentJson = $this->migrateH5PContentParams(
             $h5pFileHandler,
-            $h5pJson["mainLibrary"] ?? "H5P.EscapeRoom",
+            $originalMachineName,
             $h5pJson["language"] ?? "en"
         );
         $h5pFileHandler->writeH5PContentParams($contentJson);
@@ -180,6 +185,18 @@ class H5PVT2ER
     }
 
     /**
+     * Get machine name of root content.
+     * @param H5PFileHandler $h5pFileHandler The H5P file handler.
+     *
+     * @return string Machine name of root content.
+     */
+    private function getOriginalMachineName($h5pFileHandler)
+    {
+        $h5pJson = $h5pFileHandler->getH5PInformation();
+        return $h5pJson["mainLibrary"];
+    }
+
+    /**
      * Migrate H5P JSON.
      *
      * @param H5PFileHandler $h5pFileHandler The H5P file handler.
@@ -189,10 +206,6 @@ class H5PVT2ER
     private function migrateH5PJson($h5pFileHandler)
     {
         $h5pJson = $h5pFileHandler->getH5PInformation();
-
-        if ($h5pJson["mainLibrary"] !== "H5P.ThreeImage" && $h5pJson["mainLibrary"] !== "H5P.NDLAThreeImage") {
-            throw new \Exception(_("The content type is not a Virtual Tour.") . " (" . $h5pJson["mainLibrary"] . ")");
-        }
 
         if (isset($h5pJson["preloadedDependencies"]) && is_array($h5pJson["preloadedDependencies"])) {
             $filteredDependencies =
